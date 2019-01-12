@@ -1,5 +1,7 @@
 package projet_RI;
 
+import sample.Tokeniser;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -88,7 +90,10 @@ public class Main  {
 
     public static void main(String[] args) throws IOException {
 
-        ArrayList<String> array_tokens = new ArrayList<String>();
+       // Tokeniser tokeniser=new Tokeniser();
+        //tokeniser.tok();
+
+            ArrayList<String> array_tokens = new ArrayList<String>();
             ArrayList<String> array_stoplist = new ArrayList<String>();
             ArrayList<String> array_mots_non_vides = new ArrayList<String>();
             ArrayList<String> array_normalise = new ArrayList<String>();
@@ -124,7 +129,7 @@ public class Main  {
 
         //        tokenisation
 
-        File fichier = new File("/home/ramzi/IdeaProjects/fichier_indexation/tokenisation.txt");
+        File fichier = new File("/home/ramzi/IdeaProjects/projet_RI/fichier_indexation/tokenisation.txt");
         PrintWriter out = new PrintWriter(new FileWriter(fichier));
 
         for (int i=0; i<array_tokens.size(); i++)
@@ -204,7 +209,7 @@ public class Main  {
 //        elimination des motes vides
 
 
-        BufferedReader buff_fichier_tokenise = (BufferedReader) lire_fichier("/home/ramzi/IdeaProjects/fichier_indexation/tokenisation.txt");
+        BufferedReader buff_fichier_tokenise = (BufferedReader) lire_fichier("/home/ramzi/IdeaProjects/projet_RI/fichier_indexation/tokenisation.txt");
 
 
         while ((ligne_eliminer_mot_vide = buff_fichier_tokenise.readLine())!= null){
@@ -296,7 +301,7 @@ public class Main  {
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-        File fich_inverse = new File("/home/ramzi/IdeaProjects/fichier_indexation/fich_inverse.txt");
+        File fich_inverse = new File("/home/ramzi/IdeaProjects/projet_RI/fichier_indexation/fich_inverse.txt");
         PrintWriter out_fichier_inverse = new PrintWriter(new FileWriter(fich_inverse));
 
         for (int i=0; i<array_normalise.size();i++)
@@ -310,7 +315,7 @@ public class Main  {
         out_fichier_inverse.close();
 
 
-        BufferedReader par1 = (BufferedReader) lire_fichier("/home/ramzi/IdeaProjects/fichier_indexation/fich_inverse.txt");
+        BufferedReader par1 = (BufferedReader) lire_fichier("/home/ramzi/IdeaProjects/projet_RI/fichier_indexation/fich_inverse.txt");
 
 
         String x;
@@ -414,11 +419,14 @@ public class Main  {
         {
             for (int j=0;j<array_fich_inverse.get(i).posting.posting.size();j++)
             {
-                System.out.println(array_fich_inverse.get(i).terme +" || "+array_fich_inverse.get(i).id_doc
+               /* System.out.println(array_fich_inverse.get(i).terme +" || "+array_fich_inverse.get(i).id_doc
                         +" || "+array_fich_inverse.get(i).posting.posting.get(j).id_doc
                         +" - "+array_fich_inverse.get(i).posting.posting.get(j).poids
                         +" - "+array_fich_inverse.get(i).posting.posting.get(j).position
                         +" - "+array_fich_inverse.get(i).posting.posting.get(j).balise);
+
+               */
+
             }
 
 
